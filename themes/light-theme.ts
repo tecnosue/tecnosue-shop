@@ -54,9 +54,12 @@ export const lightTheme = createTheme({
         variant: 'contained',
         size: 'small',
         disableElevation: true,
+        
       },
       styleOverrides: {
         root: {
+          backgroundColor: 'white',
+          color:'black',
           textTransform: 'none',
           boxShadow: 'none',
           borderRadius: 10,
