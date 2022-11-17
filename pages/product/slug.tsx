@@ -4,6 +4,7 @@ import { ShopLayout } from "../../components/layouts";
 import { initialData } from "../../database/products";
 import React from "react";
 import { ProductSlideShow } from "../../components/products";
+import { ItemCounter } from '../../components/ui/ItemCounter';
 
 const product = initialData.products[0];
 
@@ -31,7 +32,7 @@ const ProductPage = () => {
             {/* Cantidad */}
             <Box sx={{ my: 2 }}>
               <Typography variant="subtitle2">Cantidad</Typography>
-              {/*  <ItemCounter /> */}
+              <ItemCounter />
               {/* <SizeSelector
                 // selectedSize={ product.sizes[2] }
                 sizes={product.sizes}
