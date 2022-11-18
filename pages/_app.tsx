@@ -1,6 +1,8 @@
 import '../styles/globals.css'
 import type { AppProps } from 'next/app'
-import {CssBaseline, ThemeProvider} from '@mui/material'
+import CssBaseline from '@mui/material/CssBaseline'
+import {ThemeProvider} from '@mui/material'
+
 import { lightTheme } from '../themes/light-theme';
 
 export default function App({ Component, pageProps }: AppProps) {
