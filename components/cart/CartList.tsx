@@ -1,5 +1,5 @@
 import NextLink from "next/link";
-import React, { useEffect, useState } from "react";
+import React, { FC, useEffect, useState } from "react";
 
 import CardActionArea from "@mui/material/CardActionArea";
 import Typography from "@mui/material/Typography";
@@ -10,6 +10,7 @@ import Grid from "@mui/material/Grid";
 import Link from "@mui/material/Link";
 
 import { initialData } from "../../database/products";
+import { ItemCounter } from "../ui";
 
 const productsInCart = [
   initialData.products[0],
@@ -17,7 +18,11 @@ const productsInCart = [
   initialData.products[2],
 ];
 
-export const CartList = () => {
+interface Props {
+  editable?: boolean;
+}
+
+export const CartList: FC<Props>= ({editable=false}) => {
   return (
     <>
       {
@@ -45,6 +50,11 @@ export const CartList = () => {
                   Talla: <strong>M</strong>
                 </Typography>
                 {/* condicional */}
+                {
+                  editable 
+                  ? <ItemCounter />
+                  : <Typography variant="h5">1</Typography>
+                }
               </Box>
             </Grid>
             <Grid
@@ -56,9 +66,16 @@ export const CartList = () => {
             >
               <Typography variant="subtitle1">{`€${product.price}`}</Typography>
               {/* editable */}
-              <Button variant="text" color="secondary">
-                Eliminar
-              </Button>
+              {
+                editable && (
+                  <Button variant="text" color="secondary">
+                    Eliminar
+                  </Button>
+
+                )
+
+              }
+              
             </Grid>
           </Grid>
         ))
