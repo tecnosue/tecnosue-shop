@@ -1,5 +1,5 @@
-import { Box } from '@mui/material/Box';
-import {  Button } from '@mui/material/Button';
+import Box from '@mui/material/Box';
+import  Button from '@mui/material/Button';
 
 import React, { FC } from 'react'
 import { ISize } from '../../interfaces/products';

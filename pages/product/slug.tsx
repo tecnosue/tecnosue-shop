@@ -1,10 +1,12 @@
-import { Box, Button, Chip, Grid, Typography } from "@mui/material";
-import { ShopLayout } from "../../components/layouts";
-
-import { initialData } from "../../database/products";
 import React from "react";
+import { ShopLayout } from "../../components/layouts";
+import Grid  from '@mui/material/Grid';
+import Box from '@mui/system/Box';
+import Button from '@mui/material/Button';
+import Typography  from '@mui/material/Typography';
+import { initialData } from "../../database/products";
 import { ProductSlideShow, SizeSelector } from "../../components/products";
-import { ItemCounter } from '../../components/ui/ItemCounter';
+import { ItemCounter } from '../../components/ui';
 
 const product = initialData.products[0];
 

@@ -1,4 +1,5 @@
 import React from "react";
+import NextLink from 'next/link';
 
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
@@ -12,6 +13,7 @@ import Typography from "@mui/material/Typography";
 import { ShopLayout } from "../../components/layouts";
 import { CartList, OrderSummary }  from "../../components/cart";
 
+
 const CartPage = () => {
   return (
     <ShopLayout
@@ -24,13 +26,15 @@ const CartPage = () => {
 
       <Grid container>
         <Grid item xs={12} sm={7}>
-          <CartList />
+          <CartList editable/>
         </Grid>
         <Grid item xs={12} sm={5}>
           <Card className="summary-card">
             <CardContent>
-              <Typography variant="h2">Resumen Pedido</Typography>
+              <Typography variant="h2" component='h2'>Resumen Pedido</Typography>
               <Divider sx={{ my: 1 }} />
+
+              
 
               <OrderSummary />
 
