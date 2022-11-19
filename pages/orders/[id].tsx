@@ -9,22 +9,40 @@ import Divider from "@mui/material/Divider";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import Link from "@mui/material/Link";
+import Chip from "@mui/material/Chip";
 
 import { ShopLayout } from "../../components/layouts";
 import { CartList, OrderSummary } from "../../components/cart";
+import {
+  CreditCardOffOutlined,
+  CreditScoreOutlined,
+} from "@mui/icons-material";
 
-const SummaryPage = () => {
+const OrderPage = () => {
   return (
     <ShopLayout
-      title="Resumen del pedido"
+      title="Resumen del pedido 123456789"
       pageDescription={"Resumen del pedido"}
     >
       <Typography variant="h1" component="h1">
-       Resumen del pedido:
+        Pedido: ABC123
       </Typography>
+      {/* <Chip sx={{ my: 2}}
+        label='pendiente de pago'
+        variant="outlined" 
+        color='error'
+        icon={<CreditCardOffOutlined />}
+       /> */}
+      <Chip
+        sx={{ my: 2 }}
+        label="Pagado"
+        variant="outlined"
+        color="success"
+        icon={<CreditScoreOutlined />}
+      />
 
       <Grid container sx={{ mt: 5 }} alignItems="center">
-        <Grid item xs={12} sm={7} >
+        <Grid item xs={12} sm={7}>
           <CartList />
         </Grid>
         <Grid item xs={12} sm={5} sx={{ pl: 5 }}>
@@ -57,11 +75,19 @@ const SummaryPage = () => {
               </Box>
 
               <OrderSummary />
-
+                    {/* //condicion */}
               <Box sx={{ mt: 3 }}>
                 <Button color="secondary" className="circular-btn" fullWidth>
-                  Comprar Ahora
+                  Pagar Ahora
                 </Button>
+
+                <Chip
+                  sx={{ my: 2 }}
+                  label="Pagado"
+                  variant="outlined"
+                  color="success"
+                  icon={<CreditScoreOutlined />}
+                />
               </Box>
             </CardContent>
           </Card>
@@ -71,4 +97,4 @@ const SummaryPage = () => {
   );
 };
 
-export default SummaryPage;
+export default OrderPage;

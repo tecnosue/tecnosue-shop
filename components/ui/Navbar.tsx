@@ -1,15 +1,15 @@
 import NextLink from "next/link";
 
-import {
-  AppBar,
-  Button,
-  Badge,
-  IconButton,
-  Link,
-  Toolbar,
-  Typography,
-  Box,
-} from "@mui/material";
+ 
+import  AppBar from "@mui/material";
+import  Button from "@mui/material";
+import  Badge from "@mui/material";
+import  IconButton from "@mui/material";
+import  Link from "@mui/material";
+import  Toolbar from "@mui/material";
+import  Typography from "@mui/material";
+import  Box from "@mui/material";
+ 
 import { SearchOutlined, ShoppingCartOutlined } from "@mui/icons-material";
 
 export const Navbar = () => {

@@ -1,14 +1,13 @@
 import { FC, useMemo, useState } from "react";
 import NextLink from "next/link";
 
-import   Grid from "@mui/material/Grid";
-import   Card from "@mui/material/Card";
-import   CardActionArea from "@mui/material/CardActionArea";
-import   CardMedia from "@mui/material/CardMedia";
-import   Box from "@mui/material/Box";
-import   Typography from "@mui/material/Typography";
-import   Link from "@mui/material/Link";
- 
+import Grid from "@mui/material/Grid";
+import Card from "@mui/material/Card";
+import CardActionArea from "@mui/material/CardActionArea";
+import CardMedia from "@mui/material/CardMedia";
+import Box from "@mui/material/Box";
+import Typography from "@mui/material/Typography";
+import Link from "@mui/material/Link";
 
 import { IProduct } from "../../interfaces";
 
@@ -20,7 +19,9 @@ export const ProductCard: FC<Props> = ({ product }) => {
   const [isHovered, setIsHovered] = useState(false);
 
   const productImage = useMemo(() => {
-    return isHovered ? `products/${product.images[1]} ` : `products/${product.images[0]} `;
+    return isHovered
+      ? `products/${product.images[1]} `
+      : `products/${product.images[0]} `;
   }, [isHovered, product.images]);
 
   return (
