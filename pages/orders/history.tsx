@@ -2,7 +2,7 @@ import NextLink from "next/link";
 import React from "react";
 
 import Grid from "@mui/material/Grid";
-import { DataGrid, GridColDef, GridValueGetterParams } from "@mui/x-data-grid";
+import { DataGrid, GridColDef } from "@mui/x-data-grid";
 import { ShopLayout } from "../../components/layouts";
 import Typography from "@mui/material/Typography";
 import Link from "@mui/material/Link";
@@ -16,7 +16,7 @@ const columns: GridColDef[] = [
     field: "paid",
     headerName: "Pagada",
     width: 200,
-    renderCell: (params: GridValueGetterParams) => {
+    renderCell: (params) => {
       return params.row.paid ? (
         <Chip color="success" label="Pagada" variant="outlined" />
       ) : (
@@ -30,7 +30,7 @@ const columns: GridColDef[] = [
     headerName: "Ver Pedido",
     width: 200,
     sortable: false,
-    renderCell: (params: GridValueGetterParams) => {
+    renderCell: (params) => {
       return (
         <NextLink href={`/orders/${params.row.id}`} passHref legacyBehavior>
           <Link underline="always">Ver Pedido</Link>
