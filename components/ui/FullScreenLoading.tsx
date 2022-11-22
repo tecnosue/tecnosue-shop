@@ -11,7 +11,7 @@ export const FullScreenLoading = () => {
         height='calc(100vh - 200px)'
     >
         <Typography sx={{ mb: 3 }} />
-        <CircularProgress thickness={ 2 } />
+        <CircularProgress thickness={ 2 } color='secondary'/>
     </Box>
   )
 }
