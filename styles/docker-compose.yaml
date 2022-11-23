@@ -1,5 +1,5 @@
 services:
-  teslodb:
+  tecnosuedb:
     image: mongo:5.0.0
     container_name: teslo-database
     ports:
