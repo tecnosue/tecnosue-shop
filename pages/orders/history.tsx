@@ -32,7 +32,7 @@ const columns: GridColDef[] = [
     sortable: false,
     renderCell: (params) => {
       return (
-        <NextLink href={`/orders/${params.row.id}`} passHref legacyBehavior>
+        <NextLink href={`/orders/${params.row.id}`} passHref >
           <Link underline="always">Ver Pedido</Link>
         </NextLink>
       );

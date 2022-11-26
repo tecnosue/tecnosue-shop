@@ -1,4 +1,7 @@
-import { createContext } from "react";
+
+
+import { createContext } from 'react';
+
 
 interface ContextProps {
     isMenuOpen: boolean;
@@ -8,5 +11,4 @@ interface ContextProps {
 }
 
 
-
-export const UiContext = createContext({} as ContextProps ); 
+export const UiContext = createContext({} as ContextProps );
