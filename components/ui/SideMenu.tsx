@@ -62,7 +62,7 @@ export const SideMenu = () => {
               placeholder="Buscar..."
               endAdornment={
                 <InputAdornment position="end">
-                  <IconButton aonClick={ onSearchTerm }>
+                  <IconButton onClick={ onSearchTerm }>
                     <SearchOutlined />
                   </IconButton>
                 </InputAdornment>
