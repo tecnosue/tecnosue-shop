@@ -2,7 +2,6 @@ import { createTheme } from '@mui/material/styles';
 import { red,  } from '@mui/material/colors';
 
 
-
 export const lightTheme = createTheme({
   palette: {
     mode: 'light',
@@ -12,7 +11,7 @@ export const lightTheme = createTheme({
     secondary: {
       main: '#3A64D8'
     },
-    info:{ 
+    info: {
       main: '#fff'
     }
   },
@@ -59,11 +58,9 @@ export const lightTheme = createTheme({
         size: 'small',
         disableElevation: true,
         color: 'info'
-        
       },
       styleOverrides: {
         root: {
-          
           textTransform: 'none',
           boxShadow: 'none',
           borderRadius: 10,

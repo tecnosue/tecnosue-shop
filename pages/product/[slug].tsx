@@ -2,7 +2,7 @@ import { Box, Button, Chip, Grid, Typography } from '@mui/material';
 import { NextPage, GetServerSideProps, GetStaticPaths, GetStaticProps } from 'next';
 
 import { ShopLayout } from '../../components/layouts';
-import { ProductSlideShow, SizeSelector } from '../../components/products';
+import { ProductSlideshow, SizeSelector } from '../../components/products';
 import { ItemCounter } from '../../components/ui/ItemCounter';
 
 import { dbProducts } from '../../database';
@@ -27,7 +27,7 @@ const ProductPage:NextPage<Props> = ({ product }) => {
       <Grid container spacing={3}>
 
         <Grid item xs={12} sm={ 7 }>
-          <ProductSlideShow 
+          <ProductSlideshow 
             images={ product.images }
           />
         </Grid>
