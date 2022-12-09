@@ -2,13 +2,13 @@ import '../styles/globals.css';
 import type { AppProps } from 'next/app';
 import { CssBaseline, ThemeProvider } from '@mui/material';
 import { SWRConfig } from 'swr';
-
+import { SessionProvider } from "next-auth/react"
 import { lightTheme } from '../themes';
 import {  AuthProvider, CartProvider, UiProvider } from '../context';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <>
+    <SessionProvider>
       <SWRConfig 
         value={{
           fetcher: (resource, init) => fetch(resource, init).then(res => res.json())
@@ -26,7 +26,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         </AuthProvider>
         
       </SWRConfig>
-    </>
+    </SessionProvider>
   )
 }
 

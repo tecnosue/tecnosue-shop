@@ -7,13 +7,15 @@ import { ProductList } from '../components/products';
 import { useProducts } from '../hooks';
 
 import { FullScreenLoading } from '../components/ui';
+import { useSession } from 'next-auth/react';
 
 
 const HomePage: NextPage = () => {
 
+  const session = useSession();
+  console.log({ session });
 
   const { products, isLoading } = useProducts('/products');
-
 
   return (
     <ShopLayout title={'tecnosue-Shop - Home'} pageDescription={'Encuentra los mejores productos de Teslo aquí'}>
