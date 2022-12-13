@@ -1,10 +1,11 @@
 import { FC, useReducer, useEffect } from 'react';
+import { useRouter } from 'next/router';
+import { useSession, signOut } from 'next-auth/react';
 import { IUser } from '../../interfaces';
 import { AuthContext, authReducer } from './';
 import tecnosueApi from '../../api/tecnosueApi';
 import Cookies from 'js-cookie';
 import axios from 'axios';
-import { useRouter } from 'next/router';
 
 export interface AuthState {
     isLoggedIn: boolean;
@@ -19,14 +20,25 @@ const AUTH_INITIAL_STATE: AuthState = {
 
 
 export const AuthProvider:FC = ({ children }) => {
-
+    const {data, status} = useSession();
+    
     const [state, dispatch] = useReducer( authReducer , AUTH_INITIAL_STATE );
     const router = useRouter();
 
     useEffect(() => {
+      if( status === 'authenticated') {
+        console.log({ user: data?.user });
+        dispatch({ type: '[Auth] - Login', payload: data?.user as IUser})
+      }
+    
+      
+    }, [status, data])
+    
+
+    /* useEffect(() => {
         checkToken();
 
-    }, [])
+    }, []) */
 
     const checkToken = async() => {
 
@@ -93,7 +105,6 @@ export const AuthProvider:FC = ({ children }) => {
     }
 
     const logout = () => {
-        Cookies.remove('token');
         Cookies.remove('cart');
         Cookies.remove('firstName');
         Cookies.remove('lastName');
@@ -103,8 +114,10 @@ export const AuthProvider:FC = ({ children }) => {
         Cookies.remove('city');
         Cookies.remove('country');
         Cookies.remove('phone');
-
-        router.reload();
+        
+        signOut();
+        //Cookies.remove('token');
+        //router.reload();
     }
  
 

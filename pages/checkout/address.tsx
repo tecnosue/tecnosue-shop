@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { Box, Button, FormControl, Grid, InputLabel, MenuItem, Select, TextField, Typography } from "@mui/material";
 import Cookies from 'js-cookie';
@@ -41,9 +41,24 @@ const AddressPage = () => {
     const router = useRouter();
     const { updateAddress} = useContext( CartContext );
 
-    const { register, handleSubmit, formState: { errors } } = useForm<FormData>({
-       defaultValues: getAddressFromCookies() 
+    const { register, handleSubmit, formState: { errors }, reset } = useForm<FormData>({
+       defaultValues: {
+            firstName: '',
+            lastName: '',
+            address: '',
+            address2: '',
+            zip: '',
+            city: '',
+            country: countries[16].code,
+            phone: '',
+
+       }
     });
+
+    useEffect(() => {
+        reset(getAddressFromCookies());     
+    }, [reset])
+    
 
     const onSubmitAddress = ( data: FormData ) => {
         updateAddress( data );
@@ -136,12 +151,12 @@ const AddressPage = () => {
                             select
                             variant="filled"
                             label="País"
-                            defaultValue={ Cookies.get('country') || countries[16].code }
+                            //defaultValue={ Cookies.get('España') || countries[16].code }
                             { ...register('country', {
                                 required: 'Este campo es requerido'
                             })}
                             error={ !!errors.country }
-                            // helperText={ errors.country?.message }
+                            
                         >
                             {
                                 countries.map( country => (
@@ -180,39 +195,5 @@ const AddressPage = () => {
     </ShopLayout>
   )
 }
-
-
-// You should use getServerSideProps when:
-// - Only if you need to pre-render a page whose data must be fetched at request time
-// export const getServerSideProps: GetServerSideProps = async ({ req }) => {
-
-//     const { token = '' } = req.cookies;
-//     let isValidToken = false;
-
-//     try {
-//         await jwt.isValidToken( token );
-//         isValidToken = true;
-//     } catch (error) {
-//         isValidToken = false;
-//     }
-
-//     if ( !isValidToken ) {
-//         return {
-//             redirect: {
-//                 destination: '/auth/login?p=/checkout/address',
-//                 permanent: false,
-//             }
-//         }
-//     }
-
-//     return {
-//         props: {
-            
-//         }
-//     }
-// }
-
-
-
 
 export default AddressPage
