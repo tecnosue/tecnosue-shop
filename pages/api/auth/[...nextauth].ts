@@ -15,11 +15,9 @@ export default NextAuth({
         password: { label: 'Contraseña:', type: 'password', placeholder: 'Contraseña'},
       },
       async authorize(credentials) {
-        console.log({credentials});
+        //console.log({credentials});
         
         return await dbUsers.checkUserEmailPassword(credentials!.email, credentials!.password);
-
-
       }
     }),
     GithubProvider({
