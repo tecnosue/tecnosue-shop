@@ -15,6 +15,8 @@ export interface IOrder {
 
     isPaid  : boolean;
     paidAt? : string;
+
+    transactionId?: String;
 }
 
 
@@ -40,3 +42,14 @@ export interface ShippingAddress {
     country  : string;
     phone    : string;
 }
+
+export interface OrderResponseBody {
+    id: string;
+    
+    status:
+        | "COMPLETED"
+        | "SAVED"
+        | "APPROVED"
+        | "VOIDED"
+        | "PAYER_ACTION_REQUIRED";
+};
