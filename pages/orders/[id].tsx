@@ -11,7 +11,7 @@ import { CartList, OrderSummary } from '../../components/cart';
 import { dbOrders } from '../../database';
 import { IOrder } from '../../interfaces';
 
-import { tecnosueApi } from '../../api';
+import { tecnosueApi } from '../../axiosApi';
 
 
 export type OrderResponseBody = {

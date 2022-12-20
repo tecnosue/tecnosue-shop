@@ -4,7 +4,7 @@ import Cookie from 'js-cookie';
 import { ICartProduct, IOrder, ShippingAddress } from '../../interfaces';
 import { CartContext, cartReducer } from './';
 import axios from 'axios';
-import { tecnosueApi } from '../../api';
+import { tecnosueApi } from '../../axiosApi';
 
 
 export interface CartState {

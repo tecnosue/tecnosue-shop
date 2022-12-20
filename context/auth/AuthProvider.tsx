@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import { useSession, signOut } from 'next-auth/react';
 import { IUser } from '../../interfaces';
 import { AuthContext, authReducer } from './';
-import tecnosueApi from '../../api/tecnosueApi';
+import tecnosueApi from '../../axiosApi/tecnosueApi';
 import Cookies from 'js-cookie';
 import axios from 'axios';
 
