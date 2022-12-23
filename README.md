@@ -1,4 +1,4 @@
-# `<Tecnosue Shop>`
+# `Tecnosue Shop
 
 ## Descripcion
 
@@ -49,12 +49,16 @@ http://localhost:3000/api/seed
 
 ## Capturas
 
-    md![captura 1](assets/images/IMG_9051.PNG)
-    md![captura 2](assets/images/IMG_9052.PNG)
-    md![captura 3](assets/images/IMG_9053.PNG)
-    md![captura 4](assets/images/IMG_9054.PNG)
-    md![captura 4](assets/images/IMG_9055.PNG)
-    md![captura 4](assets/images/IMG_9056.PNG)
+
+   
+![IMG_9051](https://user-images.githubusercontent.com/82464797/209329109-273ef86d-08ef-4726-9233-031b3cb3d236.PNG)
+![IMG_9052](https://user-images.githubusercontent.com/82464797/209329115-06eaf57f-8ec7-4df7-bdba-bf0a47ea1112.PNG)
+![IMG_9053](https://user-images.githubusercontent.com/82464797/209329121-8206dc39-c294-4541-ac45-ff9e414c717b.PNG)
+![IMG_9056](https://user-images.githubusercontent.com/82464797/209329122-ed849300-47ad-4f8c-b772-f2816a28d7c7.PNG)
+![IMG_9055](https://user-images.githubusercontent.com/82464797/209329125-e28d49ec-f00d-4e1a-9d58-b99eb4c1044b.PNG)
+![IMG_9054](https://user-images.githubusercontent.com/82464797/209329130-e96c6399-f61d-4f05-9d5d-0a8b9413741c.PNG)
+
+    
 
 ## licencia
 
