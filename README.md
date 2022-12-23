@@ -1,4 +1,4 @@
-# `Tecnosue Shop
+# Tecnosue Shop
 
 ## Descripcion
 
@@ -61,6 +61,7 @@ http://localhost:3000/api/seed
     
 
 ## licencia
+Este proyecto cuenta con licencia conforme a los términos de la licencia MIT
 
 ## Alojado en VERCEL:
 
