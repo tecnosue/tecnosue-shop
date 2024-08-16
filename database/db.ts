@@ -28,14 +28,18 @@ export const connect = async() => {
         await mongoose.disconnect();
     }
 
-    await mongoose.connect( process.env.MONGO_URL || '');
+    await mongoose.connect(process.env.MONGO_URL || '', {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+    });
     mongoConnection.isConnected = 1;
-    console.log('Conectado a MongoDB:', process.env.MONGO_URL );
+    console.log('Conectado a MongoDB:', process.env.MONGO_URL);
 }
 
 export const disconnect = async() => {
     
-    if ( process.env.NODE_ENV === 'development' ) return;
+    // No desconectar en entornos serverless para evitar tiempos de reconexión innecesarios
+    if ( process.env.NODE_ENV === 'development' || process.env.NODE_ENV === 'production' ) return;
 
     if ( mongoConnection.isConnected === 0 ) return;
 
