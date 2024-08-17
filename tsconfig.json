@@ -16,7 +16,7 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve", // Utiliza react-jsx si usas React 17 o posterior
+    "jsx": "react-jsx", // Utiliza react-jsx si usas React 17 o posterior
     "incremental": true
   },
   "include": [
