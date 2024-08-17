@@ -32,7 +32,7 @@ const CART_INITIAL_STATE: CartState = {
     shippingAddress: undefined
 }
 
-export const CartProvider:FC = ({ children }) => {
+export const CartProvider:FC<{ children: React.ReactNode }> = ({ children }) => {
 
     const [state, dispatch] = useReducer( cartReducer , CART_INITIAL_STATE );
     const router = useRouter();

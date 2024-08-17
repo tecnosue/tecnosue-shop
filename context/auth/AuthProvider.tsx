@@ -19,7 +19,7 @@ const AUTH_INITIAL_STATE: AuthState = {
 }
 
 
-export const AuthProvider:FC = ({ children }) => {
+export const AuthProvider:FC<{ children: React.ReactNode }> = ({ children }) => {
     const {data, status} = useSession();
     
     const [state, dispatch] = useReducer( authReducer , AUTH_INITIAL_STATE );
