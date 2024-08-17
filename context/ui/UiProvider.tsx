@@ -11,7 +11,7 @@ const UI_INITIAL_STATE: UiState = {
 }
 
 
-export const UiProvider:FC = ({ children }) => {
+export const UiProvider:FC<{ children: React.ReactNode }> = ({ children }) => {
 
     const [state, dispatch] = useReducer( uiReducer , UI_INITIAL_STATE );
 
