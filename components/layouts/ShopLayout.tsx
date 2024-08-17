@@ -16,15 +16,15 @@ export const ShopLayout:FC<Props> = ({ children, title, pageDescription, imageFu
         <Head>
             <title>{ title }</title>
 
-            <meta name="description" content={ pageDescription } />
+            <meta property="description" content={ pageDescription } />
             
             
-            <meta name="og:title" content={ title } />
-            <meta name="og:description" content={ pageDescription } />
+            <meta property="og:title" content={ title } />
+            <meta property="og:description" content={ pageDescription } />
 
             {
                 imageFullUrl && (
-                    <meta name="og:image" content={ imageFullUrl } />
+                    <meta property="og:image" content={ imageFullUrl } />
                 )
             }
 

@@ -29,7 +29,7 @@ export const ProductCard: FC<Props> = ({ product }) => {
       >
           <Card>
               <NextLink href={`/product/${ product.slug }`} passHref prefetch={ false }>
-                <Link>
+                
                     <CardActionArea>
 
                         {
@@ -51,7 +51,7 @@ export const ProductCard: FC<Props> = ({ product }) => {
                         />
 
                     </CardActionArea>
-                </Link>
+               
               </NextLink>
               
           </Card>

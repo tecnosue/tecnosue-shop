@@ -31,7 +31,7 @@ export const CartList: FC<Props> = ({ editable = false, products }) => {
                     <Grid container spacing={2} key={ product.slug + product.size} sx={{ mb:1 }}>
                         <Grid item xs={3}>
                             <NextLink href={`/product/${ product.slug }`} passHref>
-                                <Link component="div">
+                               
                                     <CardActionArea>
                                         <CardMedia 
                                             image={ `/products/${ product.image }` }
@@ -39,7 +39,7 @@ export const CartList: FC<Props> = ({ editable = false, products }) => {
                                             sx={{ borderRadius: '5px' }}
                                         />
                                     </CardActionArea>
-                                </Link>
+                               
                             </NextLink>
                         </Grid>
                         <Grid item xs={7}>
