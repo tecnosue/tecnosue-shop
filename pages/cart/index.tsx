@@ -18,7 +18,7 @@ const CartPage = () => {
       }
     
       
-    }, [isLoaded, cart])
+    }, [isLoaded, cart, router]);
 
     if( !isLoaded || cart.length === 0) {
         //return( <></>);
@@ -52,7 +52,7 @@ const CartPage = () => {
                                     color="secondary" 
                                     className='circular-btn' 
                                     fullWidth
-                                    href='/checkout/address'
+                                    //href='/checkout/address'
                                     >
                                     Checkout
                                 </Button>
