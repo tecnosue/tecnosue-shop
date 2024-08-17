@@ -1,10 +1,14 @@
 {
   "compilerOptions": {
-    "target": "es6",  // Cambia a es6 o esnext si es posible
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "target": "es6", // Cambia a es6 o esnext si es posible
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
-    "strict": true,  // Considera habilitar el modo estricto
+    "strict": true, // Considera habilitar el modo estricto
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
     "esModuleInterop": true,
@@ -12,9 +16,15 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "react-jsx",  // Utiliza react-jsx si usas React 17 o posterior
+    "jsx": "preserve", // Utiliza react-jsx si usas React 17 o posterior
     "incremental": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules"]
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }
