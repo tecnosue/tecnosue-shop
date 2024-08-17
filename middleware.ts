@@ -1,4 +1,5 @@
-import { NextRequest, NextResponse } from "next";
+import { NextRequest, NextResponse } from "next/server";
+
 import * as jose from "jose";
 
 export async function middleware(req: NextRequest) {
