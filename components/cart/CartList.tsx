@@ -1,6 +1,7 @@
 import { FC, useContext } from 'react';
 import NextLink from 'next/link';
-import { Box, IconButton, CardActionArea, CardMedia, Grid, Link, Typography } from '@mui/material';
+import { Box, IconButton, CardActionArea, CardMedia, Typography, Link } from '@mui/material';
+import Grid from '@mui/material/Grid';
 
 import { ItemCounter } from '../ui';
 import { CartContext } from '../../context';
@@ -30,17 +31,17 @@ export const CartList: FC<Props> = ({ editable = false, products }) => {
                 productsToShow.map( product => (
                     <Grid container spacing={2} key={ product.slug + product.size} sx={{ mb:1 }}>
                         <Grid item xs={3}>
-                            <NextLink href={`/product/${ product.slug }`} passHref>
-                               
-                                    <CardActionArea>
-                                        <CardMedia 
-                                            image={ `/products/${ product.image }` }
-                                            component='img'
-                                            sx={{ borderRadius: '5px' }}
-                                        />
-                                    </CardActionArea>
-                               
-                            </NextLink>
+                        <NextLink href={`/product/${product.slug}`} passHref>
+                            <Link>
+                                <CardActionArea>
+                                    <CardMedia 
+                                        image={`/products/${product.image}`}
+                                        component="img"
+                                        sx={{ borderRadius: '5px' }}
+                                    />
+                                </CardActionArea>
+                            </Link>
+                        </NextLink>
                         </Grid>
                         <Grid item xs={7}>
                             <Box display='flex' flexDirection='column'>
