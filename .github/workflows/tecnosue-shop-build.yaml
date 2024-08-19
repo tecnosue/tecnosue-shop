@@ -1,0 +1,66 @@
+# To better understand this file read this:
+# https://docs.ionos.space/docs/github-actions-customization/
+
+name: "Deploy Now: Execute Build"
+
+on:
+  workflow_call:
+    inputs:
+      site-url:
+        required: true
+        type: string
+      branch-id:
+        required: true
+        type: string
+
+env:
+  DEPLOYMENT_FOLDER: .next
+
+jobs:
+# Please do not rename this job
+  build-project:
+    name: build tecnosue-shop
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: 'recursive'
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: v20.0
+
+      - name: Build Node assets
+        env:
+          CI: true
+          DATA_API_KEY: FPeDq6v7W0b2A83Nz1wcIYx2APZCV9ii06ziuVuGIyeO54EyjuudMMOmcSxplHuA
+          DATA_API_URL: https://data.mongodb-api.com/app/data-gxjpsix/endpoint/data/v1
+          GITHUB_ID: 59ed3bf9b8c48bd9b679
+          GITHUB_SECRET: 62cb2db80868f6acc5dc0e5bcf1c9bf3cc6fa396
+          JWT_SECRET_SEED: Est03Sun1SeedDeMisTOKENS@12312a
+          MONGO_URL: mongodb+srv://userAdmin:v2iCGkIIfGnWZqFT@tecnosuecluster.qnxzdwi.mongodb.net/tecnosuedb
+          MONGODB_URI: mongodb+srv://vercel-admin-user-66bf81cbde31420d83a14fcf:K3jVrQlghyoegqZ3@tecnosuecluster.qnxzdwi.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
+          NEXT_PUBLIC_PAYPAL_CLIENT_ID: AVfIqVc9setDyLFXPPOmCk8rT8VQN2mZ2daLqc9SbJUTiclhxi_zJ1Lob5awQ_QYOa62GFMmEYtHhz9N
+          NEXT_PUBLIC_TAX_RATE: 0.15
+          NEXTAUTH_SECRET: Est03Sun1SeedDeMisTOKENS
+          PAYPAL_ORDERS_URL: https://api.sandbox.paypal.com/v2/checkout/orders
+          PAYPAL_SECRET: EMoMqLAurXWr0tKxR_H5hyISMU05UUpCWzlezZ9QuAiwxNvCcZvb_JRfugIlXqvTlw7du4Om0lqxYDmC
+          SITE_URL: ${{ inputs.site-url }}
+        run: |
+          npm ci
+          npm run build
+
+# Please do not touch the following action
+      - name: Store deployment content
+        uses: ionos-deploy-now/artifact-action@v1
+        with:
+          api-key: ${{ secrets.IONOS_API_KEY }}
+          service-host: api-eu.ionos.space
+          project-id: 21982d2b-726b-48c1-b159-bbd95870334e
+          branch-id: ${{ inputs.branch-id }}
+          version: ${{ github.sha }}
+          folder: ${{ env.DEPLOYMENT_FOLDER }}
+          config-file: .deploy-now/tecnosue-shop/config.yaml
+          action: upload
